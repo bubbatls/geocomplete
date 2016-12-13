@@ -120,10 +120,12 @@
         return;
       }
 
-      this.map = new google.maps.Map(
-        $(this.options.map)[0],
-        this.options.mapOptions
-      );
+      if($(this.options.map)[0]){
+        this.map = new google.maps.Map(
+          $(this.options.map)[0],
+          this.options.mapOptions
+        );
+      }
 
       // add click event listener on the map
       google.maps.event.addListener(
